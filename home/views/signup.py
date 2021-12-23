@@ -13,6 +13,7 @@ class Signup(views.View):
     def post(self, request):
         first_name = request.POST.get('firstname')
         last_name = request.POST.get('lastname')
+
         user_name = request.POST.get('username')
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -27,7 +28,7 @@ class Signup(views.View):
 
         else:
             user = User.objects.create_user(
-                first_name=first_name, last_name=last_name, username=user_name, email=email, password=password)
+                first_name=first_name, last_name=last_name,  username=user_name, email=email, password=password)
 
             user.save()
             errormassage = "Account created success fully "

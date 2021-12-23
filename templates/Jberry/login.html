@@ -1,0 +1,56 @@
+{% extends "Jberry/base.html" %}
+{% load static %}
+
+{% block title %}
+JBerry | Login
+{% endblock %}
+
+{% block body %}
+<!-- Product Catagories Area Start -->
+
+<div class="container">
+    <div class="p-4 m-4">
+        <div class="col-lg-5 mx-auto border rounded pt-4">
+            <h3 class="alert alert-light border rounded">Login Here</h3>
+            <form method="POST" action="/login/">
+                {% csrf_token %}
+
+                {% for m in messages %}
+                <div class="alert alert-dangser" role="alert">
+                    {{m}}
+                </div>
+                {% endfor %}
+
+
+
+                <!--User Name-->
+                <div class="form-group m-4">
+                    <label for="">User Name</label>
+                    <input type="text" name="username" id="" class="form-control-sm form-control" placeholder="">
+                </div>
+
+                <!--Password-->
+                <div class="form-group m-4">
+                    <label for="">Password</label>
+                    <input type="password" name="password" id="" class="form-control-sm form-control"
+                        placeholder="**********">
+                </div>
+
+                <div class="form-group m-4">
+                    <input class="btn btn-sm btn-info" type="submit" value="Login">
+                </div>
+
+
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- Product Catagories Area End -->
+
+{% endblock %}
