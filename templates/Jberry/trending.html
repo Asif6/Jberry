@@ -69,7 +69,7 @@
                         <div class="product-meta-data">
                             <div class="line"></div>
                             <p class="product-price">${{p.price}}</p>
-                            <a href="product-details.html">
+                            <a href="{% url 'products_details' p.id %}">
                                 <h6>{{p.title}}</h6>
 
                             </a>
